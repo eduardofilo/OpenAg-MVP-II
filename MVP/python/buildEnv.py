@@ -13,7 +13,7 @@ env={}
 
 def buildEnv():
     buildMac()
-    buildLocation()
+#    buildLocation()
     # Add experiment
     loadDict('exp', 'experiment_1')    
     buildReservoir()
