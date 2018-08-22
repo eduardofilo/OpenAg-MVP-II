@@ -10,7 +10,7 @@
 #######################################
 
 TARGET=/home/pi/MVP
-PYTHON=$TARTET/python
+PYTHON=$TARGET/python
 ########### Database built, customize for MVP #############
  
 # Build user, etc
