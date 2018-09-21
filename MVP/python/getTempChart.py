@@ -1,6 +1,9 @@
 import pygal
 import requests
 import json
+import pytz
+import datetime
+from datetime import timezone
 
 #Use a view in CouchDB to get the data
 #use the first key for attribute type
@@ -20,7 +23,7 @@ def getTempChart():
     line_chart.x_title="Timestamp (hover over to display date)"
     #need to reverse order to go from earliest to latest
     ts_lst.reverse()
-    line_chart.x_labels = ts_lst
+    line_chart.x_labels = map(lambda d: datetime.datetime.strptime(d, '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc).astimezone(local_tz).strftime('%Y-%m-%d %H:%M:%S'), ts_lst)
     #need to reverse order to go from earliest to latest
     v_lst.reverse()
     line_chart.add('Air Temp', v_lst)

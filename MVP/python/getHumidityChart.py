@@ -1,6 +1,9 @@
 import pygal
 import requests
 import json
+import pytz
+import datetime
+from datetime import timezone
 
 def getHumidityChart():
         #Query the database for data
@@ -19,7 +22,7 @@ def getHumidityChart():
         line_chart.x_title="Timestamp (hover over to display)"
         # reverse order for proper time sequence
         ts_lst.reverse()
-        line_chart.x_labels = ts_lst
+        line_chart.x_labels = map(lambda d: datetime.datetime.strptime(d, '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc).astimezone(local_tz).strftime('%Y-%m-%d %H:%M:%S'), ts_lst)
 
         #revrese order for proper time sequence
         v_lst.reverse()

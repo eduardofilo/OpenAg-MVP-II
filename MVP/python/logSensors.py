@@ -5,6 +5,8 @@ from logData import logData
 si=si7021()
 
 try:
+    # We read twice because bad reading in first measure after boot
+    temp = si.getTempC()
     temp = si.getTempC()
     logData("si7921_top", "Success", "temperature", "{:10.1f}".format(temp), '')
 except Exception as e:

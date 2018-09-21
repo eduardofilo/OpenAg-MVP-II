@@ -41,10 +41,12 @@ sudo pip install smbus2 || error_exit "Failure to install smbus (needed for si70
 echo  $(date +"%D %T") "smbus installed (needed for si7021 temp sensor)"
 
 # Used for charting
-sudo pip install pygal|| error_exit "Failure to install pygal (needed for charting)"
+sudo pip3 install pygal|| error_exit "Failure to install pygal (needed for charting)"
 echo  $(date +"%D %T") "pygal installed (used for charting)"
+sudo pip3 install pytz|| error_exit "Failure to install pytz (needed for charting)"
+echo  $(date +"%D %T") "pytz installed (used for charting)"
 
-pip install  couchdb || error_exit "Failure to install CouchDB Python library"
+pip install couchdb || error_exit "Failure to install CouchDB Python library"
 echo  $(date +"%D %T") "CouchDB Python Library intalled"
 
 # https://www.raspberrypi.org/forums/viewtopic.php?t=142700
