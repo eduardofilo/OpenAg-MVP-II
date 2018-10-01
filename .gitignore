@@ -1,0 +1,6 @@
+MVP/data/
+MVP/logs/
+MVP/pictures/
+MVP/python/*.pyc
+MVP/python/env.py
+MVP/python/variable.py

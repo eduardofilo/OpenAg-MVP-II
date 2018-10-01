@@ -14,6 +14,7 @@ def getHumidityChart():
         #Iterate over the rows and xtract the values and timestamp into Python lists
         v_lst = [float(x['value']['value']) for x in r.json()['rows']]
         ts_lst = [x['value']['timestamp'] for x in r.json()['rows']]
+        local_tz = pytz.timezone('Europe/Madrid')
 
         #Build the chart from the lists
         line_chart = pygal.Line()

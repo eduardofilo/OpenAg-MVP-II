@@ -11,11 +11,11 @@ from datetime import timezone
 
 def getTempChart():
     r = requests.get('http://127.0.0.1:5984/mvp_sensor_data/_design/doc/_view/attribute_value?startkey=["temperature",{}]&endkey=["temperature"]&descending=true&limit=60')
-    print r
+    #print r
 
     v_lst = [float(x['value']['value']) for x in r.json()['rows']]
     ts_lst = [x['value']['timestamp'] for x in r.json()['rows']]
-
+    local_tz = pytz.timezone('Europe/Madrid')
 
     line_chart = pygal.Line()
     line_chart.title = 'Temperature'
