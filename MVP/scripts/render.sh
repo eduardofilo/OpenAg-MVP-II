@@ -32,3 +32,9 @@ python3 "$python_dir"getTempChart.py
 echo "Build humidity graph"
 #create the humidity graph
 python3 "$python_dir"getHumidityChart.py
+
+#create the water temperature graphs
+echo "Build yellow water tank temperature graph"
+python3 "$python_dir"getYellowTempChart.py
+echo "Build white water tank temperature graph"
+python3 "$python_dir"getWhiteTempChart.py
