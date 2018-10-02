@@ -13,7 +13,7 @@ except Exception as e:
 
 try:
     humid = si.getHumidity()
-    logData("si7021_top", "Success", "humidity", "{:10.1f}".format(humid), '')
+    logData("si7921_top", "Success", "humidity", "{:10.1f}".format(humid), '')
 except Exception as e:
         logData("si7921_top", "Failure", "humidity", '', str(e))
 
@@ -23,13 +23,13 @@ except Exception as e:
 ## Yellow probe
 try:
     yellowTemp = get_temp_sens(YELLOW_DEVICE)
-    logData("yellow_probe", "Success", "temperature", "{:10.1f}".format(yellowTemp), '')
+    logData("ds18b20_yellow", "Success", "temp_yellow", "{:10.1f}".format(yellowTemp), '')
 except Exception as e:
-    logData("yellow_probe", "Failure", "temperature", '', str(e))
+    logData("ds18b20_yellow", "Failure", "temp_yellow", '', str(e))
 
 ## White probe
 try:
     whiteTemp = get_temp_sens(WHITE_DEVICE)
-    logData("white_probe", "Success", "temperature", "{:10.1f}".format(whiteTemp), '')
+    logData("ds18b20_white", "Success", "temp_white", "{:10.1f}".format(whiteTemp), '')
 except Exception as e:
-    logData("white_probe", "Failure", "temperature", '', str(e))
+    logData("ds18b20_white", "Failure", "temp_white", '', str(e))
