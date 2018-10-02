@@ -13,6 +13,5 @@ def get_temp_sens(device):
         temperature = temperature / 1000
         return float(temperature)
 
-mensaje = str(get_temp_sens(YELLOW_DEVICE)) + " ºC"
-
-print(mensaje)
+#Uncomment to test this function
+#print(str(get_temp_sens(YELLOW_DEVICE)) + " ºC")
