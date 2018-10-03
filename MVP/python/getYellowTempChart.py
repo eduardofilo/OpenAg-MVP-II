@@ -26,7 +26,7 @@ def getYellowTempChart():
     line_chart.x_labels = map(lambda d: datetime.datetime.strptime(d, '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc).astimezone(local_tz).strftime('%Y-%m-%d %H:%M:%S'), ts_lst)
     #need to reverse order to go from earliest to latest
     v_lst.reverse()
-    line_chart.add('Yellow Water Tank Temp', v_lst)
+    line_chart.add('Yellow Tank Temp', v_lst)
     line_chart.render_to_file('/home/pi/MVP/web/temp_yellow_chart.svg')
 
 getYellowTempChart()
