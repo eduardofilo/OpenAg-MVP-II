@@ -23,11 +23,11 @@ sudo mkdir /home/couchdb
 sudo chown couchdb:couchdb /home/couchdb
  
 # Get source - need URL for mirror (see blog instructions)
-wget http://mirror.stjschools.org/public/apache/couchdb/source/2.1.2/apache-couchdb-2.1.2.tar.gz
+wget http://apache.rediris.es/couchdb/source/2.3.1/apache-couchdb-2.3.1.tar.gz
  
 # extract source and enter source directory
-tar zxvf apache-couchdb-2.1.2.tar.gz 
-cd apache-couchdb-2.1.2/
+tar zxvf apache-couchdb-2.3.1.tar.gz
+cd apache-couchdb-2.3.1/
  
 # configure build and make executable(s)
 ./configure
