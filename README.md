@@ -105,7 +105,7 @@ NC='\033[0m'        # Define default text
 EXTRACT=/home/pi/unpack    # Working directory for download and unzipping
 TARGET=/home/pi/MVP       # Location for MVP
 RELEASE=OpenAg-MVP-II             # Package (repository) to download 
-GITHUB=https://github.com/webbhm/$RELEASE/archive/master.zip    # Address of Github archive
+GITHUB=https://github.com/eduardofilo/$RELEASE/archive/master.zip    # Address of Github archive
 
 echo $EXTRACT
 echo $TARGET
