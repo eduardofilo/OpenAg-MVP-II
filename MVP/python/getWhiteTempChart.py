@@ -10,7 +10,7 @@ from datetime import timezone
 #order descending so when limit the results will get the latest at the top
 
 def getWhiteTempChart():
-    r = requests.get('http://127.0.0.1:5984/mvp_sensor_data/_design/doc/_view/attribute_value?startkey=["temp_white",{}]&endkey=["temp_white"]&descending=true&limit=60')
+    r = requests.get('http://127.0.0.1:5984/mvp_sensor_data/_design/doc/_view/attribute_value?startkey=["temp_white",{}]&endkey=["temp_white"]&descending=true&limit=144')
     #print r
 
     v_lst = [float(x['value']['value']) for x in r.json()['rows']]

@@ -9,7 +9,7 @@ def getHumidityChart():
         #Query the database for data
         #Order descending so the last rows are first
         #These modifiers get humidity and return only 60 rows
-        r = requests.get('http://127.0.0.1:5984/mvp_sensor_data/_design/doc/_view/attribute_value?startkey=["humidity",{}]&endkey=["humidity"]&descending=true&limit=60')
+        r = requests.get('http://127.0.0.1:5984/mvp_sensor_data/_design/doc/_view/attribute_value?startkey=["humidity",{}]&endkey=["humidity"]&descending=true&limit=144')
 
         #Iterate over the rows and xtract the values and timestamp into Python lists
         v_lst = [float(x['value']['value']) for x in r.json()['rows']]
