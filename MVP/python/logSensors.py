@@ -7,7 +7,10 @@ si=si7021()
 
 try:
     temp = si.getTempC()
-    logData("si7921_top", "Success", "temperature", "{:10.1f}".format(temp), '')
+    if temp > 0:
+        logData("si7921_top", "Success", "temperature", "{:10.1f}".format(temp), '')
+    else:
+        logData("si7921_top", "Failure (temp < 0)", "temperature", '', str(e))
 except Exception as e:
         logData("si7921_top", "Failure", "temperature", '', str(e))
 
